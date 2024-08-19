@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 set -euxo pipefail
 
-docker build . -t jdxcode/chim:arch --platform linux/amd64
-docker run -it --rm --mount type=bind,source="$PWD/..",target=/home/jdxcode/aur --platform linux/amd64 jdxcode/chim:arch
+script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)
+
+docker build $script_dir -t jdxcode/aur --platform linux/amd64
+docker run -it --rm --mount type=bind,source="$PWD",target=/pkg --platform linux/amd64 jdxcode/aur

@@ -1,5 +1,7 @@
 # Updating AUR
 
+    docker run --rm -it -v $(pwd):/pkg jdxcode/aur-test-docker
+
     vim PKGBUILD # update version
     updpkgsums
     makepkg --printsrcinfo > .SRCINFO
