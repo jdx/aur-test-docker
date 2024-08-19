@@ -1,6 +1,6 @@
 # Updating AUR
 
-    docker run --rm -it -v $(pwd):/pkg jdxcode/aur-test-docker
+    docker run --rm -it -v $(pwd):/pkg jdxcode/aur
 
     vim PKGBUILD # update version
     updpkgsums
